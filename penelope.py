@@ -1490,7 +1490,7 @@ class CustomFormatter(logging.Formatter):
 
 
 def ControlC(num, stack):
-	if core.attached_session:
+	if core.attached_session is not None:
 		core.attached_session.detach()
 
 	elif "Menu" in core.threads:
